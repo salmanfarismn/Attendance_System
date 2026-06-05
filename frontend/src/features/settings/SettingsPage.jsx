@@ -82,7 +82,7 @@ export default function SettingsPage() {
 
       {/* Profile */}
       <SectionCard title="Profile Information" icon={User}>
-        <form onSubmit={handleProfileSave} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+        <form onSubmit={handleProfileSave} className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[['Full Name','name','John Doe'],['College','collegeName','MIT'],['Department','department','CS'],['Semester','semester','Sem 3']].map(([l,k,ph]) => (
             <div key={k}>
               <label className="input-label">{l}</label>
@@ -161,7 +161,7 @@ export default function SettingsPage() {
             <label className="input-label">Semester Name *</label>
             <input className="input" placeholder="e.g. Semester 3" value={semForm.name} onChange={(e) => setSemForm({ ...semForm, name: e.target.value })} required />
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label className="input-label">Start Date *</label>
               <input type="date" className="input" value={semForm.startDate} onChange={(e) => setSemForm({ ...semForm, startDate: e.target.value })} required />

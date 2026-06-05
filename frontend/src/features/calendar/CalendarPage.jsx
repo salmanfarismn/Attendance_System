@@ -111,14 +111,14 @@ export default function CalendarPage() {
         {loading ? <Spinner center /> : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {/* Weekdays */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '6px', marginBottom: '0.5rem' }}>
+            <div className="grid grid-cols-7 gap-1 mb-2">
               {WEEKDAYS.map((w, i) => (
                 <div key={i} style={{ textAlign: 'center', fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)' }}>{w}</div>
               ))}
             </div>
 
             {/* Heatmap Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '6px' }}>
+            <div className="grid grid-cols-7 gap-1">
               {days.map((day) => {
                 const dateKey = format(day, 'yyyy-MM-dd');
                 const summary = getDaySummary(dateKey);

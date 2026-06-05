@@ -97,7 +97,7 @@ export default function ReportsPage() {
 
       <div ref={reportRef}>
         {/* KPI Summary */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
           {[
             ['Total Classes', s.total ?? 0, 'var(--text-primary)'],
             ['Attended', s.attended ?? 0, 'var(--status-excellent)'],
@@ -113,7 +113,7 @@ export default function ReportsPage() {
         </div>
 
         {/* Charts Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '1.5rem', marginBottom: '1.5rem' }} className="md:grid-cols-1">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 mb-6">
           {/* Donut Chart */}
           <div className="card" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.5rem' }}>

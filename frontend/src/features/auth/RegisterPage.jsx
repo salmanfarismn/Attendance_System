@@ -79,7 +79,7 @@ export default function RegisterPage() {
             <Field label="Email"         name="email"      type="email"    icon={Mail}       placeholder="you@college.edu"     value={form.email}      onChange={handleChange('email')}      required />
             <Field label="Password"      name="password"   type={showPw ? 'text' : 'password'} icon={Lock} placeholder="Min. 6 characters" value={form.password} onChange={handleChange('password')} required showPw={showPw} onTogglePw={() => setShowPw((p) => !p)} />
             <Field label="College Name"  name="collegeName" type="text"    icon={Building2}  placeholder="MIT, IIT, etc."      value={form.collegeName} onChange={handleChange('collegeName')} />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <Field label="Department" name="department" type="text" icon={BookOpen} placeholder="Computer Science" value={form.department} onChange={handleChange('department')} />
               <Field label="Semester"   name="semester"   type="text" icon={BookOpen} placeholder="Sem 3"            value={form.semester}   onChange={handleChange('semester')} />
             </div>

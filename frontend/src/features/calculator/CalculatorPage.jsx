@@ -57,7 +57,7 @@ export default function CalculatorPage() {
 
       <div className="card" style={{ marginBottom: '1.5rem' }}>
         <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '1rem', marginBottom: '1.25rem' }}>Input Your Data</h2>
-        <form onSubmit={calculate} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', alignItems: 'end' }}>
+        <form onSubmit={calculate} className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
           {[
             ['Total Classes', 'total', 'e.g. 80'],
             ['Attended Classes', 'attended', 'e.g. 65'],
@@ -71,7 +71,7 @@ export default function CalculatorPage() {
           <div style={{ gridColumn: '1/-1' }}>
             <hr style={{ border: 'none', borderTop: '1px solid var(--border)', margin: '0.75rem 0' }} />
             <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '0.75rem', fontWeight: 600 }}>📊 Scenario Planner (optional)</p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="input-label">Planned Attendances</label>
                 <input type="number" min="0" className="input" placeholder="e.g. 10" value={scenario.plannedPresent} onChange={setS('plannedPresent')} />
@@ -105,7 +105,7 @@ export default function CalculatorPage() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem', marginBottom: '1.25rem' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
             <ResultCard label="Classes to Attend" value={result.needed} color="#6366f1" icon={Target} sub={result.needed === 0 ? "You're safe!" : `to reach ${result.tgt}%`} />
             <ResultCard label="Can Skip" value={result.canMiss} color="#10b981" icon={CheckCircle2} sub="and stay above target" />
             {result.projected !== null && (

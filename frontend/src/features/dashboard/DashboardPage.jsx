@@ -100,7 +100,7 @@ export default function DashboardPage() {
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '1.5rem', marginBottom: '1.5rem' }} className="md:grid-cols-1">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 mb-6">
         
         {/* Main Hero Card */}
         <div className="card" style={{ display: 'flex', flexDirection: 'column', padding: '2rem', background: 'linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(167,139,250,0.05) 100%)', border: '1px solid rgba(167,139,250,0.15)' }}>
@@ -163,7 +163,7 @@ export default function DashboardPage() {
       </div>
 
       {/* KPI Cards Row */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <div className="stat-card">
           <div style={{ color: 'var(--text-secondary)', fontSize: '0.8125rem', fontWeight: 500, marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <CheckCircle2 size={14} color="var(--status-excellent)" /> Present Days
@@ -198,7 +198,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Analytics Row */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', '@media (maxWidth: 1024px)': { gridTemplateColumns: '1fr' } }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Trend Chart */}
         <div className="card">
           <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: '1.125rem', marginBottom: '1.5rem' }}>Monthly Performance</h2>

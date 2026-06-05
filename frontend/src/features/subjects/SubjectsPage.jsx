@@ -72,7 +72,7 @@ export default function SubjectsPage() {
 
       {/* Analytics Cards */}
       {analytics && subjects.length > 0 && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
           {analytics.highest && (
             <div className="stat-card" style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
@@ -106,7 +106,7 @@ export default function SubjectsPage() {
 
       {/* Subjects Grid */}
       {loading ? <Spinner center /> : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5rem' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {subjects.length === 0 && (
             <div style={{ gridColumn: '1/-1', textAlign: 'center', padding: '6rem 2rem', color: 'var(--text-muted)', background: 'var(--bg-card)', borderRadius: '12px', border: '1px dashed var(--border)' }}>
               <BookOpen size={48} strokeWidth={1} style={{ margin: '0 auto 1.5rem', opacity: 0.3 }} />
@@ -137,7 +137,7 @@ export default function SubjectsPage() {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                <div className="grid grid-cols-3 gap-3 mb-6">
                   {[['Conducted', total], ['Attended', attended], ['Missed', parseFloat((total - attended).toFixed(1))]].map(([l, v]) => (
                     <div key={l} style={{ background: 'var(--bg-elevated)', borderRadius: '8px', padding: '0.75rem', border: '1px solid var(--border)' }}>
                       <div style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>{l}</div>
@@ -173,7 +173,7 @@ export default function SubjectsPage() {
             <label className="input-label">Faculty Name</label>
             <input className="input" placeholder="Dr. Smith" value={form.facultyName} onChange={(e) => setForm({ ...form, facultyName: e.target.value })} />
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="input-label">Credits</label>
               <input type="number" min="0" max="10" className="input" placeholder="4" value={form.credits} onChange={(e) => setForm({ ...form, credits: e.target.value })} />
